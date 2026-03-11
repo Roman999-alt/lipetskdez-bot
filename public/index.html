@@ -17,7 +17,8 @@
 <header> 
   <div class="navbar">
     <h1>Дезинсекция в Липецке</h1>
-    <nav>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+    <nav id="nav-menu">
       <a href="#prices">Цены</a>
       <a href="#services">Услуги</a>
       <a href="#why">Почему мы</a>
@@ -110,8 +111,6 @@
 </form>
 </section>
 
-</main>
-
 <footer>
 <p>© 2026 Служба дезинсекции • Все права защищены</p>
 </footer>
@@ -166,6 +165,12 @@
 <a href="#contact" class="mobile-order-btn">
 Заказать обработку
 </a>
+<script>
+function toggleMenu(){
+  const menu = document.getElementById('nav-menu');
+  menu.classList.toggle('open');
+}
+</script>
 </body>
 <script type="application/ld+json">
 {

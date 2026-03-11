@@ -793,3 +793,41 @@ display: none;
 display:block;
 }
 }
+/* BURGER MENU */
+
+.burger{
+display:none;
+font-size:28px;
+background:none;
+border:none;
+cursor:pointer;
+}
+
+/* мобильная версия */
+
+@media (max-width:768px){
+
+.burger{
+display:block;
+}
+
+#nav-menu{
+display:none;
+flex-direction:column;
+background:white;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+padding:20px;
+}
+
+#nav-menu.open{
+display:flex;
+}
+
+.navbar{
+position:relative;
+}
+
+}
