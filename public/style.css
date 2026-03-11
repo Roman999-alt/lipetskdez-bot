@@ -662,137 +662,111 @@ footer {
   }
 }
 /* Стандартное размещение на больших экранах */
-.buttons {
-  display: flex;
-  gap: 10px; /* расстояние между кнопками */
-}
-
-/* Кнопки занимают одинаковое место */
-.order-btn, .whatsapp-btn {
-  flex: 1;
-  min-width: 120px;
-  padding: 10px;
-  font-size: 16px;
-}
-
-/* Мобильная версия — экран меньше 480px */
-@media screen and (max-width: 480px) {
-  .buttons {
-    flex-direction: column; /* ставим кнопки друг под другом */
-    gap: 8px;               /* расстояние между кнопками */
-  }
-
-  .order-btn, .whatsapp-btn {
-    width: 100%;   /* растягиваем на всю ширину контейнера */
-    text-align: center;
-    font-size: 14px; /* уменьшаем шрифт, если нужно */
-  }
-}
-/* Контейнер кнопок в модальном окне */
-.modal .buttons {
-  display: flex;
-  gap: 10px;      /* расстояние между кнопками на больших экранах */
-  justify-content: center;
-  margin-top: 15px;
-}
-
-/* Стиль самих кнопок */
+/* ===== UNIFIED ADAPTIVE BUTTONS ===== */
+.button,
+.order-btn,
+.whatsapp-btn,
+.hero-buttons button,
+.hero-buttons .phone-btn,
 .modal .order-btn,
 .modal .whatsapp-btn {
-  flex: 1;           /* равная ширина кнопок */
-  min-width: 120px;  /* минимальная ширина */
-  padding: 12px 15px;
-  font-size: 16px;
-  text-align: center;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none; /* для ссылок WhatsApp */
-}
-
-/* Мобильная версия: экраны <= 480px */
-@media screen and (max-width: 480px) {
-  .modal .buttons {
-    flex-direction: column;  /* ставим кнопки друг под другом */
-    gap: 8px;                /* расстояние между кнопками */
-    width: 100%;
-    align-items: stretch;
-  }
-
-  .modal .order-btn,
-  .modal .whatsapp-btn {
-    width: 100%;          /* растягиваем на всю ширину модалки */
-    font-size: 14px;      /* уменьшаем шрифт для мобильных */
-    padding: 10px;
-  }
-}
-
-/* ===== HERO BUTTONS CLEAN & ADAPTIVE ===== */
-.hero-buttons {
-  display: flex;
-  gap: 10px;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-}
-
-.hero-buttons button,
-.hero-buttons .phone-btn {
-  flex: 1;
+  flex: 1 1 0;
   min-width: 120px;
-  padding: 12px;
+  padding: 12px 24px;
   font-size: 16px;
-  border-radius: 5px;
-  text-align: center;
+  font-weight: 600;
+  background: linear-gradient(90deg, #f4a261 20%, #e76f51 80%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
+  transition: background 0.3s, transform 0.22s, box-shadow 0.3s;
+  box-shadow: 0 8px 32px rgba(244,162,97,0.13);
+  position: relative;
+  overflow: hidden;
+}
+.button:hover,
+.order-btn:hover,
+.whatsapp-btn:hover,
+.hero-buttons button:hover,
+.hero-buttons .phone-btn:hover,
+.modal .order-btn:hover,
+.modal .whatsapp-btn:hover {
+  background: linear-gradient(90deg, #e76f51 10%, #f4a261 90%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 16px 40px rgba(231,111,81,0.13);
 }
 
-@media screen and (max-width: 480px) {
-  .hero-buttons {
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-    align-items: stretch;
-  }
-
-  .hero-buttons button,
-  .hero-buttons .phone-btn {
-    width: 100%;
-    font-size: 14px;
-    padding: 10px;
-  }
-}
-/* ===== HERO BUTTONS FIX FOR MOBILE ===== */
-.hero-buttons {
+/* Контейнеры кнопок (унификация) */
+.button-container,
+.hero-buttons,
+.buttons,
+.modal .buttons {
   display: flex;
-  flex-wrap: wrap;       /* на маленьких экранах переносим */
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 12px;
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin: 20px 0 0 0;
+}
+.modal .buttons {
+  margin-top: 15px;
 }
 
-.hero-buttons button,
-.hero-buttons .phone-btn {
-  flex: 1 1 100%;       /* каждая кнопка растягивается на всю ширину при переносе */
-  min-width: 0;          /* чтобы не было минимальной ширины, мешающей */
-  padding: 12px;
-  font-size: 16px;
+/* Для кнопок в модалке чуть другой радиус */
+.modal .order-btn,
+.modal .whatsapp-btn {
   border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-  text-decoration: none;
+  min-width: 100px;
+  padding: 12px 15px;
 }
 
-@media (max-width: 480px) {
-  .hero-buttons {
-    flex-direction: column !important;  /* ставим кнопки вертикально */
-    gap: 8px;
-  }
+/* Для hero-buttons — убираем двойной отступ */
+.hero-buttons {
+  margin: 0;
+}
 
+/* На мобильных — вертикальное размещение кнопок */
+@media (max-width: 480px) {
+  .button-container,
+  .hero-buttons,
+  .buttons,
+  .modal .buttons {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+    width: 100%;
+  }
+  .button,
+  .order-btn,
+  .whatsapp-btn,
   .hero-buttons button,
-  .hero-buttons .phone-btn {
+  .hero-buttons .phone-btn,
+  .modal .order-btn,
+  .modal .whatsapp-btn {
     width: 100% !important;
+    min-width: 0;
     font-size: 14px;
-    padding: 10px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+  }
+}
+
+/* Более крупные кнопки на планшете */
+@media (max-width: 768px) {
+  .button,
+  .order-btn,
+  .whatsapp-btn,
+  .hero-buttons button,
+  .hero-buttons .phone-btn,
+  .modal .order-btn,
+  .modal .whatsapp-btn {
+    font-size: 18px;
+    padding: 14px 20px;
   }
 }
