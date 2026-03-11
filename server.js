@@ -1,6 +1,9 @@
-const express = require("express");
-
+const express = require('express');
 const app = express();
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'public'))); // позволяет отдавать robots.txt и sitemap.xml
+
 const PORT = process.env.PORT || 3000;
 
 const TOKEN = process.env.TOKEN;
