@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Служба дезинсекции</title>
+<meta name="description" content="Профессиональное уничтожение тараканов и клопов. Быстрый выезд мастера, безопасные препараты, гарантия до 12 месяцев.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header> 
+<div class="navbar">
+<h1>Служба дезинсекции</h1>
+<nav>
+<a href="#prices">Цены</a>
+<a href="#services">Услуги</a>
+<a href="#why">Почему мы</a>
+<a href="#gallery">Работы</a>
+<a href="#contact">Заказать</a>
+</nav>
+<a class="phone-btn" href="tel:+79158577181">Позвонить</a>
+</div>
+</header>
+
+
+<section class="hero">
+  <img src="cockroach.jpg" alt="Таракан">
+  <div class="hero-text">
+    <h2>Уничтожение тараканов и клопов за 1 обработку</h2>
+    <p>Гарантия до 12 месяцев • Выезд мастера в день обращения</p>
+    <div class="hero-buttons">
+      <button onclick="openModal()">Заказать обработку</button>
+    </div>
+  </div>
+</section>
+
+
+<main>
+<section id="prices" class="prices">
+<h2>Цены на обработку</h2>
+<div class="cards">
+<div class="card"><h3>1‑комнатная квартира</h3><p>от 2000 руб</p></div>
+<div class="card"><h3>2‑комнатная квартира</h3><p>от 2500руб</p></div>
+<div class="card"><h3>3‑комнатная квартира</h3><p>от 3000 руб</p></div>
+<div class="card"><h3>Ресторан / кухня</h3><p>от 5000 руб</p></div>
+</div>
+</section>
+
+
+<section id="services" class="services">
+<h2>Наши услуги</h2>
+<div class="cards">
+<div class="card"><h3>Квартиры и дома</h3><p>Уничтожение тараканов и клопов в жилых помещениях</p></div>
+<div class="card"><h3>Рестораны и кафе</h3><p>Профессиональная обработка кухонь и ресторанов</p></div>
+<div class="card"><h3>Подвалы и склады</h3><p>Комплексная дезинсекция помещений</p></div>
+<div class="card"><h3>Профилактика</h3><p>Регулярная защита от насекомых</p></div>
+</div>
+</section>
+
+
+<section id="why" class="why">
+<h2>Почему выбирают нас</h2>
+<ul>
+<li>Гарантия результата до 12 месяцев</li>
+<li>Сертифицированные безопасные препараты</li>
+<li>Современное оборудование холодного тумана</li>
+<li>Работаем 24 часа без выходных</li>
+<li>Опытные специалисты</li>
+</ul>
+</section>
+
+
+<section id="gallery" class="gallery">
+<h2>Наши работы</h2>
+<div class="grid">
+<img src="work.jpg" alt="Обработка квартиры">
+<img src="work2.jpg" alt="Дезинсекция кухни">
+<img src="work3.jpg" alt="Результат обработки">
+<img src="work4.jpg" alt="Работа мастера">
+</div>
+</section>
+
+
+<section class="cta">
+<h2>Скидка 20% сегодня</h2>
+<p>Оставьте заявку и получите скидку на первую обработку</p>
+<button onclick="openModal()">Получить скидку</button>
+</section>
+
+
+<section id="contact" class="contact">
+<h2>Заказать обработку</h2>
+<form id="orderForm">
+  <input type="text" name="name" placeholder="Ваше имя" required>
+  <input type="tel" name="phone" placeholder="Телефон" required>
+  <select name="service">
+    <option>Тараканы</option>
+    <option>Клопы</option>
+    <option>Муравьи</option>
+    <option>Блохи</option>
+    <option>Другое</option>
+  </select>
+  <textarea name="comment" placeholder="Адрес или комментарий"></textarea>
+  <button type="submit">Отправить заявку</button>
+</form>
+</section>
+
+
+</main>
+
+
+<footer>
+<p>© 2026 Служба дезинсекции • Все права защищены</p>
+</footer>
+
+
+<div id="modal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">&times;</span>
+<h2>Заказать обработку</h2>
+<form id="modalForm">
+  <input type="text" name="name" placeholder="Ваше имя" required>
+  <input type="tel" name="phone" placeholder="Телефон" required>
+  <select name="service">
+    <option>Тараканы</option>
+    <option>Клопы</option>
+    <option>Муравьи</option>
+    <option>Блохи</option>
+    <option>Другое</option>
+  </select>
+  <textarea name="comment" placeholder="Адрес или комментарий"></textarea>
+  <button type="submit">Отправить заявку</button>
+</form>
+</div>
+</div>
+
+
+<div class="fixed-buttons">
+<a href="tel:+79158577181">📞</a>
+<a href="https://wa.me/79158577181">💬</a>
+<a href="https://t.me/Lipetskdez">✈</a>
+</div>
+
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
