@@ -1,9 +1,9 @@
 const express = require("express");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-const TOKEN = "8440870990:AAFc8eim67c5M7_jhFvDQAF0zmvygdc3GLc";
+const TOKEN = process.env.TOKEN;
 const CHAT_ID = "5058136349";
 
 app.use(express.json());
