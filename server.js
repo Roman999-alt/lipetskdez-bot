@@ -11,7 +11,6 @@ const CHAT_ID = "5058136349";
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
 
 app.post("/send", async (req, res) => {
 
