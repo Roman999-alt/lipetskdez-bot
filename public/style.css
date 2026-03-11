@@ -770,3 +770,26 @@ footer {
     padding: 14px 20px;
   }
 }
+/* Фиксированная кнопка заказа на мобильных */
+.mobile-order-btn{
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+background: #e76f51;
+color: white;
+text-align: center;
+padding: 16px;
+font-size: 18px;
+font-weight: bold;
+z-index: 9999;
+text-decoration: none;
+display: none;
+}
+
+/* показываем только на телефонах */
+@media (max-width: 768px){
+.mobile-order-btn{
+display:block;
+}
+}
