@@ -793,41 +793,48 @@ display: none;
 display:block;
 }
 }
-/* BURGER MENU */
-
-.burger{
-display:none;
-font-size:28px;
-background:none;
-border:none;
-cursor:pointer;
-}
-
-/* мобильная версия */
+/* BURGER MENU FIX: видимость и цвета */
 
 @media (max-width:768px){
 
-.burger{
-display:block;
-}
+  #nav-menu{
+    display:none;
+    flex-direction: column;
+    background:#ff6b00; /* оранжевый фон */
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    padding:20px;
+    z-index: 1000; /* поверх всех элементов */
+  }
 
-#nav-menu{
-display:none;
-flex-direction:column;
-background:white;
-position:absolute;
-top:60px;
-left:0;
-width:100%;
-padding:20px;
-}
+  #nav-menu.open{
+    display:flex;
+  }
 
-#nav-menu.open{
-display:flex;
-}
+  #nav-menu a{
+    color: #fff; /* белый текст */
+    font-size: 18px;
+    margin: 8px 0;
+    text-decoration: none;
+  }
 
-.navbar{
-position:relative;
-}
+  #nav-menu a:hover{
+    text-decoration: underline;
+  }
 
+  .burger{
+    display:block;
+    color:#ff6b00; /* цвет самой кнопки ☰ */
+    background:none;
+    border:none;
+    font-size: 28px;
+    cursor:pointer;
+    z-index: 1001; /* поверх меню */
+  }
+
+  .navbar{
+    position: relative;
+  }
 }
